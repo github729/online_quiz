@@ -1,8 +1,6 @@
 import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { HomeComponent } from './home/home.component';
-import { TechnologiesComponent } from './technologies/technologies.component';
-import { TopicsComponent } from './topics/topics.component';
 
 const routes: Routes = [
     { path: '', pathMatch: 'full', redirectTo: 'home' },
@@ -10,12 +8,7 @@ const routes: Routes = [
         path: 'home', component: HomeComponent
     },
     {
-        path: 'technologies', component: TechnologiesComponent,
-        children:[
-            {
-                path: 'topics', component:TopicsComponent
-            }
-        ]
+        path: 'technologies', loadChildren:'app/technologies/technologies.module#TechnologiesModule'
     }
 
 ]
