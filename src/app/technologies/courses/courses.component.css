@@ -19,3 +19,6 @@
 .course:hover p {
     display: none;    
 }
+.tech .col-md-2:hover {
+    background-color: antiquewhite;
+}
