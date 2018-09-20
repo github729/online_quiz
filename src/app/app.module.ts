@@ -9,6 +9,10 @@ import { AnswerComponent } from './answer/answer.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
+import { TechnologiesComponent } from './technologies/technologies.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+import { TopicsComponent } from './topics/topics.component';
 
 
 @NgModule({
@@ -18,7 +22,11 @@ import { RegisterComponent } from './register/register.component';
     QuestionsComponent,
     AnswerComponent,
     HomeComponent,
-    RegisterComponent
+    RegisterComponent,
+    TechnologiesComponent,
+    HeaderComponent,
+    FooterComponent,
+    TopicsComponent
   ],
   imports: [
     BrowserModule,
