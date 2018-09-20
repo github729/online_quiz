@@ -1,16 +1,32 @@
-.widget {
+.quiz-index{
     border: 1px solid #e2e2e2;
 }
-.widget .widget-title {
+.quiz-index .widget-title {
     font-size: 18px;
     padding: 10px;
     color: #000000;
     border-bottom: 1px solid #e2e2e2;
+    text-align: center;
 }
-.widget.quiz-nav .content {
-    padding: 4px 3px 10px 3px;
+.quiz-index {
+    position: fixed;
+    width: 26%;
+    margin-top: 15px;
 }
-.widget .content {
+
+.widget-content {
     padding: 10px;
-    text-align: left;
 }
+.widget-content .btn {
+    box-shadow:none !important;
+    margin: 3px;
+    color: #ffffff;
+    width: 30px;
+    height: 30px;
+    background-color: #dedede;
+    line-height: 30px;
+    border-radius: 50%;
+    font-size: 16px;
+    padding: 0px;
+}
+
