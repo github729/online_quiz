@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { TopicsService } from '../../services/topics.service';
+import { SinglteonService } from '../../services/singlteon.service';
 
 @Component({
   selector: 'app-topics',
@@ -7,9 +10,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TopicsComponent implements OnInit {
 
-  constructor() { }
+  private id: any;
+  public topics: any;
+
+  constructor(private _route: ActivatedRoute,
+    private _topicsApi: TopicsService,
+    private _singleteonApi: SinglteonService) { }
 
   ngOnInit() {
+    this.id = localStorage.getItem('id')
+    this._topicsApi.getTopics$(this.id).subscribe(data => {
+      if (data.success) {
+        this.topics = data.chapters;
+      } else { }
+    });
+
   }
 
 }

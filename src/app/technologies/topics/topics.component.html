@@ -2,64 +2,11 @@
   <h1 style="padding-left: 15px;">Course Name</h1>
   <div class="container-fluid tech">
     <div class="row">
-      <div class="col-md-2 course">
-        <p>One of three columns</p>
-        <span><button routerLink = "/technologies/test" type="button" class="btn btn-raised btn-info btn-sm">TAKE TEST</button></span>
-      </div>
-      <div class="col-md-2">
-        One of three columns
-      </div>
-      <div class="col-md-2">
-        One of three columns
-      </div>
-      <div class="col-md-2">
-        One of three columns
-      </div>
-      <div class="col-md-2">
-        One of three columns
-      </div>
-      <div class="col-md-2">
-        One of three columns
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-2">
-        One of three columns
-      </div>
-      <div class="col-md-2">
-        One of three columns
-      </div>
-      <div class="col-md-2">
-        One of three columns
-      </div>
-      <div class="col-md-2">
-        One of three columns
-      </div>
-      <div class="col-md-2">
-        One of three columns
-      </div>
-      <div class="col-md-2">
-        One of three columns
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-2">
-        One of three columns
-      </div>
-      <div class="col-md-2">
-        One of three columns
-      </div>
-      <div class="col-md-2">
-        One of three columns
-      </div>
-      <div class="col-md-2">
-        One of three columns
-      </div>
-      <div class="col-md-2">
-        One of three columns
-      </div>
-      <div class="col-md-2">
-        One of three columns
+      <div class="col-md-2 topic" *ngFor="let topic of topics">
+        <p>{{topic?.name}}</p>
+        <span>
+          <button routerLink="/technologies/test" type="button" class="btn btn-raised btn-info btn-sm">TAKE TEST</button>
+        </span>
       </div>
     </div>
   </div>

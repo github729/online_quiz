@@ -10,12 +10,15 @@
     position: relative;
     color: #000000;
 }
-.course span {
+.topic span {
     display: none;
 }
-.course:hover span {
+.topic:hover span {
     display: block;
 }
-.course:hover p {
+.topic:hover p {
     display: none;    
+}
+.tech .col-md-2:hover {
+    background-color: antiquewhite;
 }
