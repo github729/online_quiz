@@ -1,8 +1,11 @@
 .head {
-    background: #ff7043!important;
+    background:linear-gradient(45deg, #1de099, #1dc8cd);;
     text-align: center;
     padding: 10px 0;
     color: #ffff;
     font-size: 24px;
     text-transform: uppercase;
+}
+.btn {
+    background: linear-gradient(45deg, #1de099, #1dc8cd);
 }
