@@ -12,7 +12,7 @@ const routes: Routes = [
     path:'topics',component:TopicsComponent
   },
   {
-    path:'test',component:QuizComponent
+    path:'test/:id',component:QuizComponent
   }
 ];
 

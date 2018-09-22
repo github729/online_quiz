@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { CoursesService } from '../../services/courses.service';
 import { SinglteonService } from '../../services/singlteon.service';
+import { QuizService } from '../../services/quiz.service';
 
 @Component({
   selector: 'app-courses',
@@ -12,12 +12,12 @@ export class CoursesComponent implements OnInit {
 
   public courses : any;
 
-  constructor(private _courseApi : CoursesService,
+  constructor(private _quizApi : QuizService,
     private _router : Router,
     private _singleteonApi : SinglteonService) { }
 
   ngOnInit() {
-    this._courseApi.getCourses$().subscribe(data => {
+    this._quizApi.getCourses$().subscribe(data => {
       if (data.success) {
         this.courses = data.courses;
         console.log(this.courses)

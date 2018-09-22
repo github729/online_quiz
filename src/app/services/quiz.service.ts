@@ -8,7 +8,7 @@ import { throwError } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class CoursesService {
+export class QuizService {
 
   private httpOptions = {
     headers: new HttpHeaders({
@@ -23,6 +23,24 @@ export class CoursesService {
   getCourses$() {
     return this._http
       .get<any>(`${ENV.BASE_API}courses`, this.httpOptions)
+      .pipe(
+        catchError(this.handleError)
+      );
+  }
+
+    // GET new event
+    getQuestions$(id : number) {
+      return this._http
+        .get<any>(`${ENV.BASE_API}questions/${id}`, this.httpOptions)
+        .pipe(
+          catchError(this.handleError)
+        );
+    }
+
+  // GET new event
+  getTopics$(id : number) {
+    return this._http
+      .get<any>(`${ENV.BASE_API}chapters/${id}`, this.httpOptions)
       .pipe(
         catchError(this.handleError)
       );

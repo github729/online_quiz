@@ -5,7 +5,7 @@
       <div class="col-md-2 topic" *ngFor="let topic of topics">
         <p>{{topic?.name}}</p>
         <span>
-          <button routerLink="/technologies/test" type="button" class="btn btn-raised btn-info btn-sm">TAKE TEST</button>
+          <button routerLink="/technologies/test/{{topic?.id}}" type="button" class="btn btn-raised btn-info btn-sm">TAKE TEST</button>
         </span>
       </div>
     </div>
