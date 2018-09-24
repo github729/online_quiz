@@ -1,0 +1,38 @@
+
+.qa_list {
+    border: 1px dashed #aacdde;
+    background: #f3fafd;
+}
+ul {
+ list-style-type: square;
+}
+.green {
+    background-color: #9bea9b;
+    padding: 6px;
+    border-radius: 5px;
+}
+.red {
+    background-color: #ffcaca !important;
+    padding: 6px;
+    border-radius: 5px;
+}
+.qa_list ul li {
+    margin-bottom: 15px;
+}
+.none{
+    background-color:none;
+
+} 
+@media (min-width: 1024px) {
+    .qa_list {
+        padding: 20px;
+        font-size: 15px;
+        margin: 0px 10px 10px 10px;
+    }
+}
+@media (max-width: 768px) {
+    .qa_list {
+        padding: 10px;
+        font-size: 13px;
+    }
+}

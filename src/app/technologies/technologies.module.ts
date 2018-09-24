@@ -1,23 +1,25 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 import { TechnologiesRoutingModule } from './technologies-routing.module';
 import { CoursesComponent } from './courses/courses.component';
 import { TopicsComponent } from './topics/topics.component';
 import { QuizComponent } from './quiz/quiz.component';
-import { AnswerComponent } from './answer/answer.component';
 import { QuestionsComponent } from './questions/questions.component';
+import { AnswerPreviewComponent } from './answer-preview/answer-preview.component';
 
 @NgModule({
   imports: [
     CommonModule,
-    TechnologiesRoutingModule
+    TechnologiesRoutingModule,
+    FormsModule
   ],
   declarations: [
     CoursesComponent,
     TopicsComponent,
     QuizComponent,
-    AnswerComponent,
+    AnswerPreviewComponent,
     QuestionsComponent
   ]
 })

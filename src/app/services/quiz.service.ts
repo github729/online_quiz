@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { ENV } from '../env.config';
 import { catchError } from 'rxjs/operators';
-import { HttpHeaders, HttpErrorResponse, HttpClient} from '@angular/common/http';
+import { HttpHeaders, HttpErrorResponse, HttpClient } from '@angular/common/http';
 import { throwError } from 'rxjs';
 
 
@@ -28,23 +28,40 @@ export class QuizService {
       );
   }
 
-    // GET new event
-    getQuestions$(id : number) {
-      return this._http
-        .get<any>(`${ENV.BASE_API}questions/${id}`, this.httpOptions)
-        .pipe(
-          catchError(this.handleError)
-        );
-    }
+  // GET new event
+  getQuestions$(id: number) {
+    return this._http
+      .get<any>(`${ENV.BASE_API}questions/${id}`, this.httpOptions)
+      .pipe(
+        catchError(this.handleError)
+      );
+  }
 
   // GET new event
-  getTopics$(id : number) {
+  getTopics$(id: number) {
     return this._http
       .get<any>(`${ENV.BASE_API}chapters/${id}`, this.httpOptions)
       .pipe(
         catchError(this.handleError)
       );
   }
+
+  // Post new event
+  saveExam$(userData) {
+    return this._http
+      .post<any>(`${ENV.BASE_API}user_answers`, userData,this.httpOptions)
+      .pipe(
+        catchError(this.handleError)
+      );
+  }
+    // Post new event
+    getExamResults$(userData) {
+      return this._http
+        .post<any>(`${ENV.BASE_API}exam_results`, userData,this.httpOptions)
+        .pipe(
+          catchError(this.handleError)
+        );
+    }
 
   private handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {
@@ -61,5 +78,5 @@ export class QuizService {
     return throwError(
       'Error: Unable to complete request. please try again later.');
   };
-  
+
 }
