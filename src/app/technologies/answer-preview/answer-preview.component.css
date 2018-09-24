@@ -7,12 +7,10 @@ ul {
  list-style-type: square;
 }
 .green {
-    background-color: #9bea9b;
     padding: 6px;
     border-radius: 5px;
 }
 .red {
-    background-color: #ffcaca !important;
     padding: 6px;
     border-radius: 5px;
 }
