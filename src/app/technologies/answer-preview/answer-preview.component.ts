@@ -10,17 +10,25 @@ import { Router } from '@angular/router';
 export class AnswerPreviewComponent implements OnInit {
 
   public examResults : any ;
+  public totalQns : number;
+  public correctAns : number =0;
   
   constructor(private _quizApi : QuizService,
     private _router : Router) { }
 
   ngOnInit() {
     let data =  {'userId':1,'testId':1}
-    this._quizApi.getExamResults$(data).subscribe(data => {
+    this._quizApi.getExamResults$(data).subscribe(data => {    
       if (data.success) {
         this.examResults = data.data;
-        console.log(data)
-        // this._router.navigate(['technologies/answer-preview'])
+        this.examResults.forEach(val => {
+          val.question.question_options.forEach(option => {
+            if((val.answer_id == option.id) && (option.is_correct == true)){
+              this.correctAns++;
+            }
+          });          
+        });
+        this.totalQns = this.examResults.length;
       }
     })
   }

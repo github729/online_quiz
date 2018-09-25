@@ -1,5 +1,6 @@
-.quiz-index{
+.widget{
     border: 1px solid #e2e2e2;
+    margin-top: 33px;
 }
 .quiz-index .widget-title {
     font-size: 18px;
@@ -34,7 +35,7 @@
 .sticky-wrapper {
     border: 1px dotted #CCC;
 }
-.counter {
+.test-heading {
     background:linear-gradient(45deg, #1de099, #1dc8cd);;
     padding: 10px 0px;
     text-align: center;

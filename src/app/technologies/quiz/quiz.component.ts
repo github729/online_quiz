@@ -18,7 +18,7 @@ export class QuizComponent implements OnInit {
   public selectedIndex: any;
   public selColor: any;
   public miliseconds: number;
-  
+
 
   constructor(private _quizApi: QuizService,
     private _route: ActivatedRoute,
@@ -39,12 +39,16 @@ export class QuizComponent implements OnInit {
           this.miliseconds = 0;
           this.alive = false;
           window.alert("Times Up, Quiz Submitted");
+          this.submitExam()
         }
       });
 
     this._quizApi.getQuestions$(this.topicId).subscribe(data => {
       if (data.success) {
         this.questions = data.questions;
+        this.questions.forEach(val => {
+          this.exam.push({ 'question_id': val.id, 'answer_id': 0, user_id: 1, test_id: 1 });
+        });
       } else { }
     });
 
@@ -52,10 +56,13 @@ export class QuizComponent implements OnInit {
 
   public selected(qns: number, answerId: number) {
     this.selectedIndex = qns;
-    this.exam.push({ 'question_id': qns, 'answer_id': answerId, user_id: 1, test_id: 1 });
+    let index = this.exam.findIndex(val => val.question_id == qns);
+    this.exam.splice(index,1)
+    this.exam.push({ 'question_id': qns, 'answer_id':answerId , user_id: 1, test_id: 1 });
   }
 
   public submitExam() {
+    console.log(this.exam)
     this._quizApi.saveExam$(this.exam).subscribe(data => {
       if (data.success) {
         this._router.navigate(['technologies/answer-preview'])
