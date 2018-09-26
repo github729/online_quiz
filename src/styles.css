@@ -6,3 +6,6 @@
 .btn {
     box-shadow: none !important;
 }
+[type=reset], [type=submit], button, html [type=button] {
+    -webkit-appearance: initial !important;
+}
