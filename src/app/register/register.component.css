@@ -1,11 +1,14 @@
-.head {
-    background:linear-gradient(45deg, #1de099, #1dc8cd);;
-    text-align: center;
-    padding: 10px 0;
-    color: #ffff;
-    font-size: 24px;
-    text-transform: uppercase;
+
+.page {
+    padding-top: 100px !important;
+}
+.btn-rounded {
+    border-radius: 10em;
+}
+.card-header {
+    background:linear-gradient(45deg, #1de099, #1dc8cd);
 }
 .btn {
-    background: linear-gradient(45deg, #1de099, #1dc8cd);
+    width: 50%;
+    margin-left: 25%;
 }

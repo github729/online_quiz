@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { PLATFORM_ID, APP_ID, Inject } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
@@ -34,7 +34,7 @@ export function getAuthServiceConfigs() {
         },
           {
             id: LinkedinLoginProvider.PROVIDER_ID,
-            provider: new LinkedinLoginProvider("1098828800522-m2ig6bieilc3tpqvmlcpdvrpvn86q4ks.apps.googleusercontent.com")
+            provider: new LinkedinLoginProvider("www.linkedin.com/in/anusha-manne-400494124")
           },
       ]
   );
@@ -56,7 +56,8 @@ export function getAuthServiceConfigs() {
     HttpClientModule,
     AppRoutingModule,    
     FormsModule,
-    SocialLoginModule
+    SocialLoginModule,
+    ReactiveFormsModule
   ],
   providers: [
     {

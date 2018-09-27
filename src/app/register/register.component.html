@@ -1,42 +1,79 @@
-<div class="card">
+<div class="page">
+  <div class="col-md-6 offset-md-3">
 
-  <!-- Heading -->
-  <div class="head">
-    <h3 class="text-center"> SIGN UP TODAY</h3>   
+    <div class="card">
+
+      <!-- Heading -->
+      <h5 class="card-header white-text text-center py-4">
+        <strong>Sign Up</strong>
+      </h5>
+
+      <!--Card content-->
+      <div class="card-body">
+        <!-- form -->
+        <form [formGroup]="signupForm" (ngSubmit)="signUp()">
+
+          <!-- Name -->
+          <div class="md-form">
+            <i class="fa fa-user prefix grey-text"></i>
+            <input type="text" id="first_name" class="form-control" formControlName="first_name">
+            <label for="first_name">First Name</label>
+            <div *ngIf="formErrors.first_name" class="small text-danger formErrors text-center" [innerHTML]="formErrors.first_name">
+            </div>
+          </div>
+
+          <!-- Name -->
+          <div class="md-form">
+            <i class="fa fa-user prefix grey-text"></i>
+            <input type="text" id="last_name" class="form-control" formControlName="last_name">
+            <label for="last_name">Last Name</label>
+            <div *ngIf="formErrors.last_name" class="small text-danger formErrors text-center" [innerHTML]="formErrors.last_name">
+            </div>
+          </div>
+          
+          <!-- email -->
+          <div class="md-form">
+            <i class="fa fa-envelope prefix grey-text"></i>
+            <input type="text" id="email" class="form-control" formControlName="email">
+            <label for="email">Your Email</label>
+            <div *ngIf="formErrors.email" class="small text-danger formErrors text-center" [innerHTML]="formErrors.email">
+            </div>
+          </div>
+
+          <!-- Mobile Number -->
+          <div class="md-form">
+            <i class="fa fa-mobile prefix grey-text"></i>
+            <input type="text" id="contact_number" class="form-control" formControlName="contact_number">
+            <label for="contact_number">Your Mobile Number</label>
+            <div *ngIf="formErrors.contact_number" class="small text-danger formErrors text-center" [innerHTML]="formErrors.contact_number">
+            </div>
+          </div>
+
+          <!-- Password -->
+          <div class="md-form">
+            <i class="fa fa-key prefix grey-text"></i>
+            <input type="password" id="password" class="form-control" formControlName="password">
+            <label for="password">Create Your Password</label>
+            <div *ngIf="formErrors.password" class="small text-danger formErrors text-center" [innerHTML]="formErrors.password">
+            </div>
+          </div>
+
+          <!-- Sign up button -->
+          <button class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit">Sign up</button>
+
+          <div class="text-center">
+            <!-- Register -->
+            <p>Alredy have an account?
+              <a routerLink="/home">Sign in</a>
+            </p>
+          </div>
+
+        </form>
+        <!-- Form -->
+
+      </div>
+
+    </div>
+
   </div>
-
-  <!--Card content-->
-  <div class="card-body">
-    <!-- Form -->
-    <form name="">
-      <div class="md-form">
-        <i class="fa fa-user prefix grey-text"></i>
-        <input type="text" id="form3" class="form-control">
-        <label for="form3">Your name</label>
-      </div>
-      <div class="md-form">
-        <i class="fa fa-envelope prefix grey-text"></i>
-        <input type="text" id="form2" class="form-control">
-        <label for="form2">Your email</label>
-      </div>
-
-      <div class="md-form">
-        <i class="fa fa-pencil prefix grey-text"></i>
-        <input type="text" id="form8" class="form-control">
-        <label for="form8">Your message</label>
-      </div>
-
-      <div class="text-center">
-        <button class="btn waves-effect waves-light">Sign up</button>
-        <!-- <fieldset class="form-check">
-            <input type="checkbox" class="form-check-input" id="checkbox1">
-            <label for="checkbox1" class="form-check-label dark-grey-text">Subscribe me to the newsletter</label>
-          </fieldset> -->
-      </div>
-
-    </form>
-    <!-- Form -->
-
-  </div>
-
 </div>

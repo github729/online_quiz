@@ -1,8 +1,15 @@
-.page {
-    padding-top: 100px !important;
-}
 
+.head {
+    background:linear-gradient(45deg, #1de099, #1dc8cd);
+    text-align: center;
+    padding: 10px 0;
+    color: #ffff;
+    font-size: 24px;
+    text-transform: uppercase;
+}
 .btn-rounded {
     border-radius: 10em;
 }
-
+.btn-outline-info {
+    border: 1px solid #1dc8cd !important; 
+}

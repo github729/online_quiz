@@ -20,8 +20,8 @@ export class TopicsComponent implements OnInit {
   ngOnInit() {
     this.id = localStorage.getItem('id')
     this._quizApi.getTopics$(this.id).subscribe(data => {
-      if (data.success) {
-        this.topics = data.chapters;
+      if (data['success']) {
+        this.topics = data['chapters'];
       } else { }
     });
 

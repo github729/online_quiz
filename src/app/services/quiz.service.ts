@@ -10,14 +10,19 @@ import { throwError } from 'rxjs';
 })
 export class QuizService {
 
-  private httpOptions = {
-    headers: new HttpHeaders({
-      'Content-Type': 'application/json',
-      'Authorization': 'quiz'
-    })
-  };
+  private currentUser: any;
 
-  constructor(private _http: HttpClient) { }
+  private httpOptions : any;
+
+  constructor(private _http: HttpClient) {
+    this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    this.httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': this.currentUser.token
+      })
+    };
+   }
 
   // GET new event
   getCourses$() {

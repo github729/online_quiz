@@ -9,18 +9,23 @@ import { Router } from '@angular/router';
 })
 export class AnswerPreviewComponent implements OnInit {
 
+  private currentUser: any;
   public examResults: any;
   public totalQns: number;
   public correctAns: number = 0;
+  public userId : any;
 
   constructor(private _quizApi: QuizService,
-    private _router: Router) { }
+    private _router: Router) { 
+      this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
+      this.userId =  this.currentUser.user.userid
+    }
 
   ngOnInit() {
-    let data = { 'userId': 1, 'testId': 1 }
+    let data = { 'userId': this.userId , 'testId': 1 }
     this._quizApi.getExamResults$(data).subscribe(data => {
-      if (data.success) {
-        this.examResults = data.data;
+      if (data['success']) {
+        this.examResults = data['data'];
         this.examResults.forEach(val => {
           val.question.question_options.forEach(option => {
             if ((val.answer_id == option.id) && (option.is_correct == true)) {

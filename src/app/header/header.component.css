@@ -5,3 +5,6 @@ li.nav-item.login {
 .top-nav-collapse {
     background: rgb(13, 165, 165);
 }
+.btn-lg .fa{
+    color: white
+}

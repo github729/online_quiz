@@ -1,7 +1,7 @@
 import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { HomeComponent } from './home/home.component';
-import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 const routes: Routes = [
     { path: '', pathMatch: 'full', redirectTo: 'home' },
@@ -12,7 +12,7 @@ const routes: Routes = [
         path: 'technologies', loadChildren:'app/technologies/technologies.module#TechnologiesModule'
     },
     {
-        path:'login',component:LoginComponent
+        path:'sign-up',component:RegisterComponent
     }
 
 ]

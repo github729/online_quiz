@@ -36,23 +36,26 @@
 
             <!-- Right -->
             <ul class="navbar-nav nav-flex-icons">
-                <li class="nav-item login">
-                    <a (click)="socialSignIn('facebook')" class="nav-link">Sign in</a>
+                <!-- <li class="nav-item login">
+                    <button class="btn">Sign up</button>
                 </li>
                 <li class="nav-item login">
-                    <a class="nav-link" routerLink="/login">Sign up</a>
-                </li>
-                <!-- <li class="nav-item">
-                    <a href="https://www.facebook.com/mdbootstrap" class="nav-link" target="_blank">
-                        <i class="fa fa-facebook"></i>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="https://twitter.com/MDBootstrap" class="nav-link" target="_blank">
-                        <i class="fa fa-twitter"></i>
-                    </a>
+                    <a type="button" class="nav-link" routerLink="/login">Sign in</a>
                 </li> -->
+                <!--Facebook-->
+                <a type="button" class="btn-lg" (click)="socialSignIn('facebook')" title="sign in with facebook">
+                    <i class="fa fa-facebook"></i>
+                </a>
+                <!--Google +-->
+                <a type="button" class="btn-lg" (click)="socialSignIn('google')" title="sign in with google">
+                    <i class="fa fa-google-plus"></i>
+                </a>
+                <!--Linkedin-->
+                <a type="button" class="btn-lg" (click)="socialSignIn('linkedin')" title="sign in with linkedin">
+                    <i class="fa fa-linkedin"></i>
+                </a>
             </ul>
+
         </div>
 
     </div>

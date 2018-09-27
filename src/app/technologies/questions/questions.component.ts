@@ -28,8 +28,8 @@ export class QuestionsComponent implements OnInit {
       }
     },1000)
     this._quizApi.getQuestions$(this.topicId).subscribe(data => {
-      if (data.success) {
-        this.questions = data.questions;
+      if (data['success']) {
+        this.questions = data['questions'];
         console.log(this.questions)
       } else { }
     });

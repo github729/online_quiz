@@ -18,8 +18,8 @@ export class CoursesComponent implements OnInit {
 
   ngOnInit() {
     this._quizApi.getCourses$().subscribe(data => {
-      if (data.success) {
-        this.courses = data.courses;
+      if (data['success']) {
+        this.courses = data['courses'];
         console.log(this.courses)
       } else { }
     });

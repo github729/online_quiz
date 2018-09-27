@@ -13,16 +13,20 @@ export class QuizComponent implements OnInit {
   private alive: boolean = true;
   private time_allocated: number = 30;
   private exam: any = [];
+  private currentUser: any;
   public questions: any;
   private topicId: number;
   public selectedIndex: any;
   public selColor: any;
   public miliseconds: number;
-
+  public userId : any;
 
   constructor(private _quizApi: QuizService,
     private _route: ActivatedRoute,
-    private _router: Router) { }
+    private _router: Router) {
+    this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    this.userId =  this.currentUser.user.userid
+  }
 
   ngOnInit() {
 
@@ -44,10 +48,10 @@ export class QuizComponent implements OnInit {
       });
 
     this._quizApi.getQuestions$(this.topicId).subscribe(data => {
-      if (data.success) {
-        this.questions = data.questions;
+      if (data['success']) {
+        this.questions = data['questions'];
         this.questions.forEach(val => {
-          this.exam.push({ 'question_id': val.id, 'answer_id': 0, user_id: 1, test_id: 1 });
+          this.exam.push({ 'question_id': val.id, 'answer_id': 0, user_id: this.userId, test_id: 1 });
         });
       } else { }
     });
@@ -57,14 +61,14 @@ export class QuizComponent implements OnInit {
   public selected(qns: number, answerId: number) {
     this.selectedIndex = qns;
     let index = this.exam.findIndex(val => val.question_id == qns);
-    this.exam.splice(index,1)
-    this.exam.push({ 'question_id': qns, 'answer_id':answerId , user_id: 1, test_id: 1 });
+    this.exam.splice(index, 1)
+    this.exam.push({ 'question_id': qns, 'answer_id': answerId, user_id: this.userId, test_id: 1 });
   }
 
   public submitExam() {
     console.log(this.exam)
     this._quizApi.saveExam$(this.exam).subscribe(data => {
-      if (data.success) {
+      if (data['success']) {
         this._router.navigate(['technologies/answer-preview'])
       }
     })
