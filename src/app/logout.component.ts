@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from './services/auth.service';
+import { ToastrManager } from 'ng6-toastr-notifications';
 @Component({
     template: ''
 })
@@ -8,14 +9,15 @@ import { AuthService } from './services/auth.service';
 export class LogoutComponent implements OnInit {
 
     constructor(
-        private authService: AuthService,
-        private router: Router,) {
+        private _authService: AuthService,
+        private _router: Router,
+        public toastr : ToastrManager) {
     }
 
     ngOnInit() {
-        this.authService.logout();
-        // this.toastr.success('You have been logged out.', 'Success');
-        this.router.navigate(['/home']);
+        this._authService.logout();
+        this.toastr.successToastr('You have been logged out.', 'Success');
+        this._router.navigate(['/home']);
     }
 
 }
