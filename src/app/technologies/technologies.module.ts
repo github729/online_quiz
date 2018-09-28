@@ -8,12 +8,14 @@ import { TopicsComponent } from './topics/topics.component';
 import { QuizComponent } from './quiz/quiz.component';
 import { QuestionsComponent } from './questions/questions.component';
 import { AnswerPreviewComponent } from './answer-preview/answer-preview.component';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 @NgModule({
   imports: [
     CommonModule,
     TechnologiesRoutingModule,
-    FormsModule
+    FormsModule,
+    NgxSpinnerModule
   ],
   declarations: [
     CoursesComponent,

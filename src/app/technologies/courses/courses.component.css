@@ -22,3 +22,6 @@
 .tech .col-md-2:hover {
     background-color: antiquewhite;
 }
+.page {
+    z-index: 1000;
+}

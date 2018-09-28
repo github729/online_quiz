@@ -1,14 +1,9 @@
 
-.page {
-    padding-top: 100px !important;
+.md-form {
+    margin-top: 0rem !important;
+    margin-bottom: 0rem !important;
 }
-.btn-rounded {
-    border-radius: 10em;
-}
-.card-header {
-    background:linear-gradient(45deg, #1de099, #1dc8cd);
-}
-.btn {
-    width: 50%;
-    margin-left: 25%;
+.modal-footer {
+    text-align: center;
+    display: block;
 }

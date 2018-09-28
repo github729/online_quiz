@@ -30,6 +30,8 @@
     "@nguniversal/module-map-ngfactory-loader": "^6.1.0",
     "angular-6-social-login": "^1.1.1",
     "core-js": "^2.4.1",
+    "ng6-toastr-notifications": "^1.0.4",
+    "ngx-spinner": "^6.1.2",
     "rxjs": "^6.3.2",
     "ts-loader": "^5.2.1",
     "zone.js": "^0.8.26"

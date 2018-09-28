@@ -5,6 +5,8 @@ import {
   GoogleLoginProvider,
   LinkedinLoginProvider,
 } from 'angular-6-social-login';
+import { Router } from '@angular/router';
+import { ToastrManager } from 'ng6-toastr-notifications';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -12,9 +14,18 @@ import {
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private socialAuthService: AuthService) { }
+  public currentUser: any;
+
+  constructor(private socialAuthService: AuthService,
+    private _router : Router,
+    public toastr: ToastrManager) {
+    this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
+  }
+
   public socialSignIn(socialPlatform: string) {
+
     let socialPlatformProvider;
+
     if (socialPlatform == "facebook") {
       socialPlatformProvider = FacebookLoginProvider.PROVIDER_ID;
     } else if (socialPlatform == "google") {
@@ -22,7 +33,6 @@ export class HeaderComponent implements OnInit {
     } else if (socialPlatform == "linkedin") {
       socialPlatformProvider = LinkedinLoginProvider.PROVIDER_ID;
     }
-
 
     this.socialAuthService.signIn(socialPlatformProvider).then(
       (userData) => {
@@ -34,7 +44,15 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit() {
-    
-  }
 
+  }
+  public technologies() {
+    if(this.currentUser) {
+      this._router.navigate(['/technologies/courses'])
+   }else {
+    this.toastr.infoToastr('Please Login','Info!',{
+      position : 'top-center'
+    })
+   }
+  }
 }

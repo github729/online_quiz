@@ -1,15 +1,7 @@
-
-.head {
-    background:linear-gradient(45deg, #1de099, #1dc8cd);
-    text-align: center;
-    padding: 10px 0;
-    color: #ffff;
-    font-size: 24px;
-    text-transform: uppercase;
+.md-form {
+    margin-top: 0rem !important;
+    margin-bottom: 0rem !important;
 }
-.btn-rounded {
-    border-radius: 10em;
-}
-.btn-outline-info {
-    border: 1px solid #1dc8cd !important; 
+.modal-footer {
+    justify-content: center;
 }

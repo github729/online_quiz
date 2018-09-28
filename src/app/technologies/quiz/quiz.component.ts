@@ -3,6 +3,7 @@ import { QuizService } from '../../services/quiz.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { interval } from 'rxjs';
 import { takeWhile, filter } from 'rxjs/operators';
+import { NgxSpinnerService } from 'ngx-spinner';
 @Component({
   selector: 'app-quiz',
   templateUrl: './quiz.component.html',
@@ -23,13 +24,14 @@ export class QuizComponent implements OnInit {
 
   constructor(private _quizApi: QuizService,
     private _route: ActivatedRoute,
-    private _router: Router) {
+    private _router: Router,
+    private _spinner: NgxSpinnerService) {
     this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
     this.userId =  this.currentUser.user.userid
   }
 
   ngOnInit() {
-
+    this._spinner.show();
     this._route.params.subscribe(params => {
       this.topicId = params['id'];
     });
@@ -50,6 +52,7 @@ export class QuizComponent implements OnInit {
     this._quizApi.getQuestions$(this.topicId).subscribe(data => {
       if (data['success']) {
         this.questions = data['questions'];
+        this._spinner.hide();
         this.questions.forEach(val => {
           this.exam.push({ 'question_id': val.id, 'answer_id': 0, user_id: this.userId, test_id: 1 });
         });

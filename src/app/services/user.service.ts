@@ -18,7 +18,7 @@ export class UserService {
     this.httpOptions = { 
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
-        'authorization': this.currentUser.token
+        'authorization': 'online Quiz'
       })
     };
   }

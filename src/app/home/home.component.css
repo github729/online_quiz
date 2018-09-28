@@ -4,7 +4,20 @@ header,
 .view {
   height: 100%;
 }
-
+.btn-cyan {
+  background-color: #00BCB1!important;
+  color: #fff!important;
+}
+.fa-times-circle {
+  font-size: 25px;
+  color: white;
+}
+.light-blue.darken-3 {
+  background:linear-gradient(45deg, #1de099, #1dc8cd);
+}
+a, a.disabled:hover, a:disabled:hover {
+  color: black;
+}
 @media (max-width: 740px) {
   html,
   body,
