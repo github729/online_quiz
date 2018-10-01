@@ -25,6 +25,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout.component';
+import { LatestJobsComponent } from './latest-jobs/latest-jobs.component';
 
 
 export function getAuthServiceConfigs() {
@@ -56,7 +57,8 @@ export function getAuthServiceConfigs() {
     HeaderComponent,
     FooterComponent,
     LoginComponent,
-    LogoutComponent
+    LogoutComponent,
+    LatestJobsComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'online-quizzes' }),

@@ -4,6 +4,12 @@ import { UserFormModel, UserModel } from '../models/user.model';
 import { Subscription } from 'rxjs';
 import { UserFormService } from '../services/user-form.service';
 import { UserService } from '../services/user.service';
+import {
+  AuthService,
+  FacebookLoginProvider,
+  GoogleLoginProvider,
+  LinkedinLoginProvider,
+} from 'angular-6-social-login';
 
 @Component({
   selector: 'app-register',
@@ -25,8 +31,30 @@ export class RegisterComponent implements OnInit {
   public error: boolean;
 
   constructor(private _userFormService: UserFormService,
+    private socialAuthService: AuthService,
     private _formBuilder: FormBuilder,
     private _userApi : UserService) { }
+
+    public socialSignIn(socialPlatform: string) {
+
+      let socialPlatformProvider;
+  
+      if (socialPlatform == "facebook") {
+        socialPlatformProvider = FacebookLoginProvider.PROVIDER_ID;
+      } else if (socialPlatform == "google") {
+        socialPlatformProvider = GoogleLoginProvider.PROVIDER_ID;
+      } else if (socialPlatform == "linkedin") {
+        socialPlatformProvider = LinkedinLoginProvider.PROVIDER_ID;
+      }
+  
+      this.socialAuthService.signIn(socialPlatformProvider).then(
+        (userData) => {
+          console.log(socialPlatform + " sign in data : ", userData);
+          // Now sign-in with userData
+          // ...
+        }
+      );
+    }
 
   ngOnInit() {
     this.formErrors = this._userFormService.formErrors;
