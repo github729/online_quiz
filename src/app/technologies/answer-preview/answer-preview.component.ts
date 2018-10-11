@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { QuizService } from '../../services/quiz.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-answer-preview',
@@ -9,20 +9,21 @@ import { Router } from '@angular/router';
 })
 export class AnswerPreviewComponent implements OnInit {
 
-  private currentUser: any;
   public examResults: any;
   public totalQns: number;
   public correctAns: number = 0;
-  public userId : any;
+  public testId : any;
 
   constructor(private _quizApi: QuizService,
-    private _router: Router) { 
-      this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
-      this.userId =  this.currentUser.user.userid
+    private _router: Router,
+    private _route: ActivatedRoute) { 
     }
 
   ngOnInit() {
-    let data = { 'userId': this.userId , 'testId': 1 }
+    this._route.params.subscribe(params => {
+      this.testId = params['test_id'];
+    });
+    let data = { 'test_id': this.testId }
     this._quizApi.getExamResults$(data).subscribe(data => {
       if (data['success']) {
         this.examResults = data['data'];

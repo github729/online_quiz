@@ -1,20 +1,23 @@
-import { Component, OnInit, ViewContainerRef } from '@angular/core';
+import { Component, OnInit, ViewContainerRef, ElementRef,ViewEncapsulation } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
 import { ToastrManager } from 'ng6-toastr-notifications';
 
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
+  encapsulation: ViewEncapsulation.None
 })
 export class LoginComponent implements OnInit {
 
   constructor(private _formBuilder: FormBuilder,
     private _authApi: AuthService,
     private _router: Router,
-    public toastr: ToastrManager
+    public toastr: ToastrManager,
+    private elementRef:ElementRef
     ) { }
 
   loginForm: FormGroup = this._formBuilder.group({
@@ -38,5 +41,8 @@ export class LoginComponent implements OnInit {
           this.loginForm.reset();
         });
     }
+  }
+  ngAfterViewInit() {
+    this.elementRef.nativeElement.ownerDocument.body.style.backgroundColor = '#fff';
   }
 }

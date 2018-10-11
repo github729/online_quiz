@@ -55,4 +55,8 @@ export class HeaderComponent implements OnInit {
     })
    }
   }
+  logout() {
+    this.currentUser = null;                                                          
+    this._router.navigate(['/logout']);
+  }
 }

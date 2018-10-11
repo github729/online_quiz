@@ -5,3 +5,6 @@
 .modal-footer {
     justify-content: center;
 }
+.modal-backdrop {
+    position: relative !important;
+}

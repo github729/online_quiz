@@ -68,6 +68,15 @@ export class QuizService {
         );
     }
 
+      // Post new event
+  saveTest$(userId) {
+    return this._http
+      .post<any>(`${ENV.BASE_API}test`, {'user_id':userId},this.httpOptions)
+      .pipe(
+        catchError(this.handleError)
+      );
+  }
+
   private handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {
       // A client-side or network error occurred. Handle it accordingly.

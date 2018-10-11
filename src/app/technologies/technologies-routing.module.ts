@@ -16,7 +16,7 @@ const routes: Routes = [
     path:'test/:id',component:QuizComponent
   },
   {
-    path:'answer-preview',component:AnswerPreviewComponent
+    path:'answer-preview/:test_id',component:AnswerPreviewComponent
   }
 ];
 

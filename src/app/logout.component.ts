@@ -8,6 +8,8 @@ import { ToastrManager } from 'ng6-toastr-notifications';
 
 export class LogoutComponent implements OnInit {
 
+    public currentUser : any;
+
     constructor(
         private _authService: AuthService,
         private _router: Router,

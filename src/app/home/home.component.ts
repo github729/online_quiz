@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, ElementRef } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { ToastrManager } from 'ng6-toastr-notifications';
@@ -6,7 +6,8 @@ import { ToastrManager } from 'ng6-toastr-notifications';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
+  encapsulation: ViewEncapsulation.None
 })
 export class HomeComponent implements OnInit {
 
@@ -14,6 +15,7 @@ export class HomeComponent implements OnInit {
 
   constructor(private _router: Router,
     private _spinner: NgxSpinnerService,
+    private elementRef:ElementRef,
     public toastr: ToastrManager) { 
     this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
   }
@@ -37,5 +39,8 @@ export class HomeComponent implements OnInit {
           position : 'top-center'
         })
      }
+  }
+  ngAfterViewInit() {
+    this.elementRef.nativeElement.ownerDocument.body.style.backgroundColor = '#fff';
   }
 }

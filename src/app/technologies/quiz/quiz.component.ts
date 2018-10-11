@@ -20,14 +20,15 @@ export class QuizComponent implements OnInit {
   public selectedIndex: any;
   public selColor: any;
   public miliseconds: number;
-  public userId : any;
+  public userId: any;
+  public testId: any;
 
   constructor(private _quizApi: QuizService,
     private _route: ActivatedRoute,
     private _router: Router,
     private _spinner: NgxSpinnerService) {
     this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
-    this.userId =  this.currentUser.user.userid
+    this.userId = this.currentUser.user.userid;
   }
 
   ngOnInit() {
@@ -35,6 +36,23 @@ export class QuizComponent implements OnInit {
     this._route.params.subscribe(params => {
       this.topicId = params['id'];
     });
+
+    this._quizApi.saveTest$(this.userId).subscribe(data => {
+      if (data['success']) {
+        this.testId = data['data'].id
+
+        this._quizApi.getQuestions$(this.topicId).subscribe(data => {
+          if (data['success']) {
+            this.questions = data['questions'];
+            this._spinner.hide();
+            this.questions.forEach(val => {
+              this.exam.push({ 'question_id': val.id, 'answer_id': 0, test_id: this.testId });
+            });
+          } else { }
+        });
+        
+      }
+    })
 
     this.miliseconds = this.time_allocated * 60 * 1000;
     interval(1000)
@@ -49,30 +67,20 @@ export class QuizComponent implements OnInit {
         }
       });
 
-    this._quizApi.getQuestions$(this.topicId).subscribe(data => {
-      if (data['success']) {
-        this.questions = data['questions'];
-        this._spinner.hide();
-        this.questions.forEach(val => {
-          this.exam.push({ 'question_id': val.id, 'answer_id': 0, user_id: this.userId, test_id: 1 });
-        });
-      } else { }
-    });
-
   }
 
   public selected(qns: number, answerId: number) {
     this.selectedIndex = qns;
     let index = this.exam.findIndex(val => val.question_id == qns);
     this.exam.splice(index, 1)
-    this.exam.push({ 'question_id': qns, 'answer_id': answerId, user_id: this.userId, test_id: 1 });
+    this.exam.push({ 'question_id': qns, 'answer_id': answerId, test_id: this.testId });
   }
 
   public submitExam() {
     console.log(this.exam)
     this._quizApi.saveExam$(this.exam).subscribe(data => {
       if (data['success']) {
-        this._router.navigate(['technologies/answer-preview'])
+        this._router.navigate([`/technologies/answer-preview/${this.testId}`])
       }
     })
   }
