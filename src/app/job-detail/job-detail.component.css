@@ -1,0 +1,104 @@
+.card.card-cascade.wider {
+    box-shadow: none;
+    background-color: transparent;
+}
+.card.card-cascade .view.view-cascade {
+    box-shadow: 0 5px 11px 0 rgba(0,0,0,.18), 0 4px 15px 0 rgba(0,0,0,.15);
+    border-radius: .25rem;
+}
+.card.card-cascade.wider.reverse .card-body.card-body-cascade {
+    z-index: 3;
+    margin-top: -4rem;
+    border-radius: .25rem;
+    box-shadow: 0 5px 11px 0 rgba(0,0,0,.18), 0 4px 15px 0 rgba(0,0,0,.15);
+}
+.card.card-cascade.wider .card-body.card-body-cascade {
+    margin-left: 4%;
+    margin-right: 4%;
+    background: #fff;
+}
+.card-img-top {
+    height: 350px;
+}
+section.full-detail {
+    padding: 4em 0 3em 0;
+}
+.row {
+    margin-right: -15px;
+    margin-left: -15px;
+}
+h2.detail-title {
+    font-size: 18px;
+    background: #f5f6f7;
+    padding: 8px 20px;
+    margin-bottom: 16px;
+    line-height: 1.6;
+    border-radius: 2px;
+    color: #35434e;
+    border-left: 3px solid #11b719;
+    width: 100%;
+}
+.full-detail-description p {
+    margin-bottom: 20px;
+    line-height: 1.9;
+    font-size: 15px;
+    padding: 0 20px;
+}
+
+ul.detail-list li {
+    padding: 0;
+    margin-bottom: 10px;
+    line-height: 1.9;
+    font-size: 17px;
+    color: #707c88;
+    list-style: none;
+}
+ul.detail-list li:before {
+    content: "\f101";
+    position: relative;
+    font-size: 17px;
+    color: #11b719;
+    left: -12px;
+    font-family: fontawesome;
+}
+
+.detail-pic {
+    display: block;
+    width: 140px;
+    background: #ffffff;
+    border: 1px solid #11b719; 
+    height: 140px;
+    border-radius: 50%;
+    padding: 9px;
+    margin: 0 auto;
+    position: relative;
+    transform: translateY(-50px);
+}
+.detail-pic img {
+    width: 120px;
+    height: 120px;
+    margin: auto;
+    border-radius: 50%;
+}
+@media (min-width: 1200px){
+    .container {
+        max-width: 1240px;
+    }
+}
+
+
+/* @media (min-width: 992px){
+    .container {
+        width: 970px;
+    }
+}
+
+@media (min-width: 768px){
+    .container {
+        width: 750px;
+    }
+    h2 {
+        font-size: 36px;
+        line-height: 48px;
+    }
+} */

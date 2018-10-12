@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { JobsService } from '../services/jobs.service';
 
 @Component({
   selector: 'app-latest-jobs',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LatestJobsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private jobsApi : JobsService) { }
 
   ngOnInit() {
+      this.jobsApi.getJobs$().subscribe(data => {
+        console.log(data)
+      })
   }
 
 }

@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { HomeComponent } from './home/home.component';
 import { LogoutComponent } from './logout.component';
 import { LatestJobsComponent } from './latest-jobs/latest-jobs.component';
+import { JobDetailComponent } from './job-detail/job-detail.component';
 
 const routes: Routes = [
     { path: '', pathMatch: 'full', redirectTo: 'home' },
@@ -14,6 +15,9 @@ const routes: Routes = [
     },
     {
         path: 'latest-jobs', component: LatestJobsComponent
+    },
+    {
+        path: 'job-detail', component: JobDetailComponent
     },
     {
         path: 'logout', component: LogoutComponent
