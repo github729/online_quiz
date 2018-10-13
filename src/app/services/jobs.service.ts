@@ -21,12 +21,20 @@ export class JobsService {
   }
 
     // GET new event
+    getJobById$(id:number) {
+      return this._http
+      .get<any>(`${ENV.BASE_API}job/${id}`, this.httpOptions)
+      .pipe(
+        catchError(this.handleError)
+      );
+    }
+
     getJobs$() {
       return this._http
-        .get<any>('',this.httpOptions )
-        .pipe(
-          catchError(this.handleError)
-        );
+      .get<any>(`${ENV.BASE_API}jobs`, this.httpOptions)
+      .pipe(
+        catchError(this.handleError)
+      );
     }
 
   private handleError(error: HttpErrorResponse) {

@@ -17,7 +17,7 @@ const routes: Routes = [
         path: 'latest-jobs', component: LatestJobsComponent
     },
     {
-        path: 'job-detail', component: JobDetailComponent
+        path: 'job-detail/:id', component: JobDetailComponent
     },
     {
         path: 'logout', component: LogoutComponent

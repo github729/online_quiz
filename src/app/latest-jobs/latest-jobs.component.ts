@@ -8,12 +8,18 @@ import { JobsService } from '../services/jobs.service';
 })
 export class LatestJobsComponent implements OnInit {
 
-  constructor(private jobsApi : JobsService) { }
+  public jobs : any; 
+
+  constructor(private _jobsApi : JobsService) { }
 
   ngOnInit() {
-      this.jobsApi.getJobs$().subscribe(data => {
-        console.log(data)
-      })
+    
+    this._jobsApi.getJobs$().subscribe(data => {
+      if(data['success']) {
+        this.jobs = data['jobs'];
+        console.log(this.jobs)
+      }
+    })
   }
 
 }

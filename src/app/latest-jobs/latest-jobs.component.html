@@ -1,6 +1,6 @@
 <div class="page container">
-  <div class="row">
-    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+  <div class="row" *ngFor="let job of jobs" >
+    <!-- <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
       <div class="job-grid">
         <div class="job-title-sec">
           <div class="c-logo">
@@ -153,7 +153,25 @@
         <span class="job-lctn">Sacramento, California</span>
         <a href="#" title="">APPLY NOW</a>
       </div>
+    </div> -->
+
+    <!--Card-->
+    <div class="card col-md-10" style="margin: 0 auto">
+      <div class="job-company-icon col-md-2">
+        <img src="assets/img/sample.jpg" alt="company-icon" class="img-responsive">
+      </div>
+      <!--Card content-->
+      <div class="card-block col-md-10">
+        <!--Title-->
+        <h4 class="card-title"><strong>{{job.jtiltle}}</strong></h4>
+        <p>{{job.jcname}}</p>
+        <!--Text-->
+        <p class="card-text">{{job.jcprofile}}</p>
+        <a href="#" class="pull-right" ripple-radius routerLink="/job-detail/{{job.id}}">VIEW ALL</a>
+      </div>
+      <!--/.Card content-->
+
     </div>
+    <!--/.Card-->
   </div>
 </div>
-

@@ -1,4 +1,4 @@
-.job-grid {
+/* .job-grid {
     box-shadow: none;
     border: 2px solid #e8ecec;
 }
@@ -89,4 +89,20 @@
     border-radius: 8px;
     padding: 0px 20px;
     margin-top: 30px;
+} */
+.card {
+    display: -webkit-box;
+    padding-top: 20px;
+    padding-bottom: 15px;
+}
+.job-company-icon>img {
+    min-width: 70px;
+    height: 70px;
+}
+p {
+    color: #666;
+    font-size: 13px;
+}
+.row {
+    margin-bottom: 20px;
 }
