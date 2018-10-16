@@ -1,0 +1,30 @@
+.section-title {
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+.categories-list-heading {
+    padding: 8px 20px;
+    margin-bottom: 15px;
+}
+.categories-list-heading>h4 {
+    text-transform: uppercase;
+}
+.categories-columns-wrapper .categories-column>li {
+    padding-bottom: 5px;
+    list-style: none;
+}
+.categories-columns-wrapper .categories-column>li>a {
+    color: #627199;
+}
+.card {
+    text-align: center;
+}
+.flex {
+    display: flex;
+}
+.list-inline, .list-unstyled {
+    padding-left: 0;
+}
+.col-md-3 {
+    padding-bottom: 15px;
+}

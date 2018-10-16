@@ -28,6 +28,7 @@ import { LogoutComponent } from './logout.component';
 import { LatestJobsComponent } from './latest-jobs/latest-jobs.component';
 import { JobDetailComponent } from './job-detail/job-detail.component';
 import { LayoutComponent } from './layout/layout.component';
+import { JobCategoriesComponent } from './job-categories/job-categories.component';
 
 
 export function getAuthServiceConfigs() {
@@ -62,7 +63,8 @@ export function getAuthServiceConfigs() {
     LogoutComponent,
     LatestJobsComponent,
     JobDetailComponent,
-    LayoutComponent
+    LayoutComponent,
+    JobCategoriesComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'online-quizzes' }),

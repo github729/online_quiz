@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
 import { ToastrManager } from 'ng6-toastr-notifications';
+import { HeaderComponent } from '../header/header.component';
 
 
 @Component({
@@ -35,6 +36,7 @@ export class LoginComponent implements OnInit {
           if (data.success === false) {
             this.toastr.errorToastr(data.message, 'Invalid');
           } else {
+            HeaderComponent.updateUserStatus.next(true); // here!
             this.toastr.successToastr('You have been successfully logged in.', 'Success');
             this._router.navigate(['/technologies/courses']);
           }

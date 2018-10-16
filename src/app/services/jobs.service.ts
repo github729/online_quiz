@@ -29,9 +29,9 @@ export class JobsService {
       );
     }
 
-    getJobs$() {
+    getJobs$(searchText) {
       return this._http
-      .get<any>(`${ENV.BASE_API}jobs`, this.httpOptions)
+      .post<any>(`${ENV.BASE_API}jobs`,searchText, this.httpOptions)
       .pipe(
         catchError(this.handleError)
       );
