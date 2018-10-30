@@ -1,12 +1,6 @@
-html,
-body,
-header,
-.view {
-  height: 100%;
-}
 .btn-cyan {
-  background-color: #00BCB1!important;
-  color: #fff!important;
+  background: #2185C5;
+  color: #fff;
 }
 .fa-times-circle {
   font-size: 25px;
@@ -15,8 +9,18 @@ header,
 .light-blue.darken-3 {
   background:linear-gradient(45deg, #1de099, #1dc8cd);
 }
-a, a.disabled:hover, a:disabled:hover {
-  color: black;
+.content p {
+  color : #ff821c !important
+}
+hr {
+  border-top: 1px solid transparent;
+}
+
+html,
+body,
+header,
+.view {
+  height: 100%;
 }
 @media (max-width: 740px) {
   html,

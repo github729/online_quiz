@@ -6,13 +6,13 @@
         <div class="card">
           <div class="categories-list">
             <div class="categories-list-heading">
-              <h5 class="dark">Jobs in {{location.state_name}}</h5>
+              <h5 class="dark">Jobs in {{location.name}}</h5>
             </div>
             <!-- .categories-list-heading -->
             <div class="categories-columns-wrapper flex no-wrap space-between" *ngFor="let city of location.cities">
               <ul class="categories-column">
                 <li>
-                  <a routerLink="/latest-jobs/{{city.city_name}}"> Jobs in {{city.city_name}}</a>
+                  <a routerLink="/latest-jobs/{{city.name}}"> Jobs in {{city.name}}</a>
                 </li>
               </ul>
               <!-- end .categories-column -->

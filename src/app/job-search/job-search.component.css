@@ -1,0 +1,19 @@
+.banner_1 {
+    background: url(../../assets/img/banner_1.jpg)no-repeat center top;
+    -webkit-background-size: cover;
+    min-height: 200px;
+}
+.search_form {
+    padding-top: 50px;
+}
+.btn {
+    margin: 0;
+    background-color: #2185C5;
+}
+.btn:hover {
+    background: #f15f43;
+    transition: all 0.3s;
+}
+h1 {
+    margin-bottom: 1.5rem;
+}
