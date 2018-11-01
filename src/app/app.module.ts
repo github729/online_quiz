@@ -30,8 +30,8 @@ import { JobDetailComponent } from './job-detail/job-detail.component';
 import { LayoutComponent } from './layout/layout.component';
 import { JobCategoriesComponent } from './job-categories/job-categories.component';
 import { JobSearchComponent } from './job-search/job-search.component';
-
-
+import 'hammerjs';
+import { NgxHmCarouselModule } from 'ngx-hm-carousel';
 export function getAuthServiceConfigs() {
   let config = new AuthServiceConfig(
     [
@@ -77,6 +77,7 @@ export function getAuthServiceConfigs() {
     ReactiveFormsModule,
     BrowserAnimationsModule,
     NgxSpinnerModule,
+    NgxHmCarouselModule,
     ToastrModule.forRoot()
   ],
   providers: [

@@ -45,3 +45,83 @@ header,
     background: #1C2331 !important;
   }
 }
+
+
+.carousel .content {
+  display: flex;
+}
+.carousel .content .item {
+  width: 100%;
+  display: block;
+}
+.carousel .content .item .img {
+  width: 100%;
+  display: block;
+  background-size: cover;
+  background-position: center;
+  height: 0;
+  padding-bottom: 50%;
+}
+.carousel .item {
+  width: 100%;
+  display: block;
+}
+.carousel .item .img {
+  width: 100%;
+  display: block;
+  background-size: cover;
+  background-position: center;
+  height: 0;
+  padding-bottom: 50%;
+}
+.carousel .ball {
+  width: 10px;
+  height: 10px;
+  border-radius: app-border-radius(cycle);
+  background: black;
+  border: 2px solid;
+  opacity: 0.5;
+}
+.carousel .ball.visible {
+  opacity: 1;
+}
+.carousel.transition {
+  transition: all 0.4s ease-in-out;
+}
+.carousel .progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: #ff5252;
+}
+.carousel .click-area {
+  width: 50px;
+  text-align: center;
+}
+.carousel .click-area i {
+  font-size: 3em;
+}
+ .caption a 
+{
+background-color: transparent!important;
+border-radius: 100px;
+box-shadow: none;
+border: 2px solid #fff;
+padding: 10px 20px;
+letter-spacing: 1px;
+}
+.caption span {
+  display: block;
+}
+.caption{
+      font-size: 3em;
+      color: #fff;
+      padding:120px;
+      float: right;
+  }
+  .click-area {
+    color: #ffff;
+    background-color: #000000;
+  }

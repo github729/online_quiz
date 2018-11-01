@@ -12,6 +12,7 @@ export class TopicsComponent implements OnInit {
 
   private id: any;
   public topics: any;
+  public sliderImages : any;
 
   constructor(private _route: ActivatedRoute,
     private _quizApi: QuizService,

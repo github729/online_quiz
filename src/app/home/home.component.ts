@@ -13,6 +13,32 @@ export class HomeComponent implements OnInit {
 
   public currentUser : any;
 
+  index = 0;
+  infinite = true;
+  direction = 'right';
+  directionToggle = true;
+  autoplay = true;
+  avatars = [
+    {
+      url: 'assets/img/sliderone.jpg',
+      data:'What would you like to learn?',
+      button:'Browse Our Online Courses',
+      link:''
+    },
+    {
+      url: 'assets/img/slidertwo.jpg',
+      data:'Enjoy your study with our experts',
+      button:'View Courses',
+      link:''
+    },
+    {
+      url: 'assets/img/sliderthree.jpg',
+      data:'Largest education institute',
+      button:'View Courses',
+      link:''
+    }
+  ]
+  
   constructor(private _router: Router,
     private _spinner: NgxSpinnerService,
     private elementRef:ElementRef,

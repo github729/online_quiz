@@ -1,55 +1,48 @@
 <!-- Full Page Intro -->
-<div class="view full-page-intro" style="background-image: url('assets/img/english.jpg'); background-repeat: no-repeat; background-size: cover;margin-top: 65px;">
 
-  <!-- Mask & flexbox options-->
-  <div class="mask d-flex justify-content-center align-items-center">
+<ngx-hm-carousel
+  [(ngModel)]="index"
+  (ngModelChange)="indexChanged($event)"
+  [autoplay-speed]="3000"
+  [autoplay]="true"
+  [infinite]="infinite"
+  [between-delay]="2000"
+  class="carousel c-accent">
 
-    <!-- Content -->
-    <div class="container">
-
-      <!--Grid row-->
-      <div class="row learn wow fadeIn">
-
-        <!--Grid column-->
-        <div class="col-md-7 mb-4 text-center content text-md-left">
-
-          <h5 class="display-4 font-weight-bold">To improve online learning, try testing with quizzes</h5>
-
-          <hr>
-
-          <p>
-            <strong>Best & free guide for testing your skills</strong>
-          </p>
-
-          <p class="mb-4 d-none d-md-block">
-            <strong> Loved by over 500 000 users. Questions and answers for every Quiz are available.Write a Quiz and improve your
-              skills </strong>
-          </p>
-
-          <a (click)="startTest()" class="btn btn-cyan btn-lg">Start Test
-            <i class="fa fa-graduation-cap ml-2"></i>
-          </a>
-
+  <section ngx-hm-carousel-container class="content">
+    <article class="item cursor-pointer"
+      ngx-hm-carousel-item
+      *ngFor="let avatar of avatars">
+      <div class="img"
+        [style.backgroundImage]="'url('+avatar.url+')'">
+        <div class="caption">
+            <span>{{ avatar.data}}</span>          
+            <a class="btn" href="#">{{ avatar.button }}</a>          
         </div>
-        <!--Grid column-->
-
-        <!--Grid column-->
-        <!-- <div class="col-md-5 col-xl-5 mb-4" *ngIf="!currentUser">
-          <app-login></app-login>
-
-        </div> -->
-        <!--Grid column-->
-
       </div>
-      <!--Grid row-->
+    </article>
+  </section>
 
+  <ng-template #carouselPrev>
+    <div class="click-area">
+      <i class="fa fa-angle-left"></i>      
     </div>
-    <!-- Content -->
+  </ng-template>
 
-  </div>
-  <!-- Mask & flexbox options-->
+  <ng-template #carouselNext>
+    <div class="click-area">
+      <i class="fa fa-angle-right"></i>
+    </div>
+  </ng-template>
 
-</div>
+  <ng-template #carouselDot let-model>
+    <div class="ball bg-accent"
+      [class.visible]="model.index === model.currentIndex"></div>
+  </ng-template>
+
+
+</ngx-hm-carousel>
+
 <!-- Full Page Intro -->
 
 <div class="container">

@@ -9,13 +9,15 @@ import { QuizComponent } from './quiz/quiz.component';
 import { QuestionsComponent } from './questions/questions.component';
 import { AnswerPreviewComponent } from './answer-preview/answer-preview.component';
 import { NgxSpinnerModule } from 'ngx-spinner';
+import { NgxHmCarouselModule } from 'ngx-hm-carousel';
 
 @NgModule({
   imports: [
     CommonModule,
     TechnologiesRoutingModule,
     FormsModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    NgxHmCarouselModule
   ],
   declarations: [
     CoursesComponent,
