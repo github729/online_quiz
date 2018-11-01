@@ -7,9 +7,9 @@
         <div class="col_3">
           <div class="filter">
             <h4 style="font-size: 35px" class="thumb-item">Filter</h4>
-            <form style=" margin-top: 30px;">
+            <form name="form" style=" margin-top: 30px;" #filterForm="ngForm" (ngSubmit)="search()">
               <div class="form-group">
-                <select class="form-control" id="sel1">
+                <select class="form-control" name="industry" [(ngModel)]="model.industry" #industry="ngModel">
                   <option>Industry</option>
                   <option>2</option>
                   <option>3</option>
@@ -17,7 +17,7 @@
                 </select>
               </div>
               <div class="form-group">
-                <select class="form-control" id="sel1">
+                <select class="form-control" name="job-type" [(ngModel)]="model.type" #type="ngModel">
                   <option>Job Type</option>
                   <option>2</option>
                   <option>3</option>
@@ -25,15 +25,15 @@
                 </select>
               </div>
               <div class="form-group">
-                <select class="form-control" id="sel1">
-                  <option>Salary</option>
+                <select class="form-control" name="salary" [(ngModel)]="model.salary" #salary="ngModel">
+                  <option value="" selected>Salary</option>
                   <option>2</option>
                   <option>3</option>
                   <option>4</option>
                 </select>
               </div>
               <div class="form-group">
-                <select class="form-control" id="sel1">
+                <select class="form-control" name="location"  [(ngModel)]="model.location" #location="ngModel">
                   <option>Location</option>
                   <option>2</option>
                   <option>3</option>
@@ -42,7 +42,7 @@
               </div>
               <div class="form-group">
                 <select class="form-control" id="sel1">
-                  <option>KeyWords</option>
+                  <option >KeyWords</option>
                   <option>2</option>
                   <option>3</option>
                   <option>4</option>

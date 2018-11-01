@@ -8,6 +8,7 @@ import {
 import { Router } from '@angular/router';
 import { ToastrManager } from 'ng6-toastr-notifications';
 import { Subject } from 'rxjs';
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -21,9 +22,10 @@ export class HeaderComponent implements OnInit {
   constructor(private socialAuthService: AuthService,
     private _router : Router,
     public toastr: ToastrManager) {
-    HeaderComponent.updateUserStatus.subscribe(res => {
-      this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
-    })
+      HeaderComponent.updateUserStatus.subscribe(res => {
+        console.log(this.currentUser)
+        this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
+      });
   }
 
   public socialSignIn(socialPlatform: string) {

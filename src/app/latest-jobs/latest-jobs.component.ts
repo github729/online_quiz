@@ -11,6 +11,7 @@ export class LatestJobsComponent implements OnInit {
 
   private location : any;
   public jobs : any; 
+  model: any = {};
 
   constructor(private _jobsApi : JobsService,
     private _route : ActivatedRoute) { }
@@ -24,7 +25,9 @@ export class LatestJobsComponent implements OnInit {
         this.jobs = data['jobs'];
         console.log(this.jobs)
       }
-    })
+    });
   }
-
+  search() {
+    alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.model))
+  }
 }

@@ -34,7 +34,7 @@ export class HomeComponent implements OnInit {
     {
       url: 'assets/img/sliderthree.jpg',
       data:'Largest education institute',
-      button:'View Courses',
+      button:'Read more About us',
       link:''
     }
   ]
