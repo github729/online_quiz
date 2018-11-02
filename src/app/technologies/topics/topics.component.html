@@ -1,4 +1,5 @@
 <div class="page">
+<!-- 
   <h1 style="padding-left: 15px;">Course Name</h1>
   <div class="container-fluid tech">
     <div class="row">
@@ -10,6 +11,46 @@
       </div>
     </div>
   </div>
+</div> -->
+<div class="invert course-img" style="background-image: url('assets/img/topics.jpg');">
+  <div class="wrappr text-center">
+    <h1>Angular 4 Topics And Tests</h1>
+    <p>See what's offered by the portal and then find something that suits your needs. Write test and imporove skills with
+      each test.
+    </p>
+  </div>
+  <!-- .wrappr -->
 </div>
 
+<h1 class="text-center" style="padding-bottom: 20px;">All Topics</h1>
 
+<div class="card col-md-8 text-center">
+  <div class="px-4">
+    <!--Table-->
+    <table class="table table-responsive-md mb-0">
+      <!--Table head-->
+      <thead>
+        <tr>
+          <th scope="row">Id</th>
+          <th class="th-lg">Topic Name</th>
+          <th class="th-lg">Actions</th>
+        </tr>
+      </thead>
+      <!--Table head-->
+
+      <!--Table body-->
+      <tbody>
+        <tr *ngFor="let topic of topics; let i = index">
+          <td>{{ i+1 }}</td>
+          <td>{{topic?.name}}</td>
+          <td>
+            <a routerLink="/technologies/test/{{topic?.id}}" type="button" class="btn btn-info btn-sm">TAKE TEST</a>
+          </td>
+        </tr>
+      </tbody>
+      <!--Table body-->
+    </table>
+
+  </div>
+</div>
+</div>

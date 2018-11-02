@@ -1,0 +1,65 @@
+.invert {
+    color: rgba( 255, 255, 255, 1 );
+}
+.course-img {
+ padding-top: 250px;
+ padding-bottom: 20px;
+ display: block; 
+ position: relative;
+ background-size: cover;
+ background-repeat: no-repeat;
+ background-attachment: scroll;
+ margin-bottom: 30px;
+}
+#gridiconcontainer ul.gridicons {
+    width: 100%;
+    margin-left: 1%;
+    padding: 0;
+}
+ul {
+    list-style: none;
+}
+#gridiconcontainer ul.gridicons li {
+    padding: 20px;
+    display: inline-table;
+}
+ul.gridicons li.currentselected {
+    background-color: transparent;
+    opacity: 1;
+}
+ .gridicon_link {
+    cursor: pointer;
+    position: relative;
+    display: block;
+    text-align: center;
+}
+ ul.gridicons li .icon_content {
+    font-size: 20px;
+    background: #dce2e8;
+}
+ ul.gridicons li .image_holder {
+    text-align: center;
+    vertical-align: middle;
+    box-sizing: content-box;
+    overflow: hidden;
+}
+ul.gridicons li .image_holder img {
+    transition: all 0.25s ease-in-out;
+    width: 100%;
+}
+.course-content ul.gridicons li img {
+    margin-top: 0;
+}
+.hovereffect:hover {
+    -webkit-transform: scale(1.6); 
+     -moz-transform: scale(1.6);
+     -o-transform: scale(1.6);
+     transform: scale(1.6);
+}
+h2.block {
+    font-weight: 300;
+    font-size: 1.5rem;
+}
+.book-title {
+    padding-top: 25px;
+}

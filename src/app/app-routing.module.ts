@@ -5,6 +5,7 @@ import { LogoutComponent } from './logout.component';
 import { LatestJobsComponent } from './latest-jobs/latest-jobs.component';
 import { JobDetailComponent } from './job-detail/job-detail.component';
 import { JobCategoriesComponent } from './job-categories/job-categories.component';
+import { NoteBooksComponent } from './note-books/note-books.component';
 
 const routes: Routes = [
     { path: '', pathMatch: 'full', redirectTo: 'home' },
@@ -22,6 +23,9 @@ const routes: Routes = [
     },
     {
         path: 'job-categories', component: JobCategoriesComponent
+    },
+    {
+        path: 'note-books', component: NoteBooksComponent
     },
     {
         path: 'logout', component: LogoutComponent

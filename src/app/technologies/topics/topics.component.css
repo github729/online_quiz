@@ -1,4 +1,4 @@
-.tech .col-md-2 {
+/* .tech .col-md-2 {
     background-color: #dedede; 
     text-align: center;
     border: 1px solid #fff;
@@ -21,7 +21,30 @@
 }
 .tech .col-md-2:hover {
     background-color: antiquewhite;
+} */
+.card {
+    margin-left: 15%;
+}
+.invert {
+    color:  #f15f43;
+}
+.course-img {
+    padding-top: 250px;
+    padding-bottom: 20px;
+    display: block; 
+    position: relative;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    margin-bottom: 30px;
+}
+th {
+     text-align: center!important; 
+     font-weight: bold!important;
 }
 
-
+.btn:hover {
+    background: #f15f43;
+    transition: all 0.3s;
+}
   

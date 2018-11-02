@@ -97,7 +97,9 @@
               "src/assets/js/addons/datatables.min.js"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "src/assets/css/bootstrap.min.css",
+              "src/assets/css/mdb.min.css"
             ],
             "assets": [
               "src/assets",

@@ -1,6 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { JobsService } from '../services/jobs.service';
 import { ActivatedRoute } from '@angular/router';
+class Filter {
+  constructor(
+    public industry: string = "",
+    public job_type: string = "",
+    public salary: string = "",
+    public location: string = "",
+    public keywords: string = ""
+  ) {}
+}
 
 @Component({
   selector: 'app-latest-jobs',
@@ -11,8 +20,9 @@ export class LatestJobsComponent implements OnInit {
 
   private location : any;
   public jobs : any; 
-  model: any = {};
-
+  @ViewChild("filterForm") form: any;
+  model: Filter = new Filter();
+  
   constructor(private _jobsApi : JobsService,
     private _route : ActivatedRoute) { }
 

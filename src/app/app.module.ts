@@ -32,6 +32,7 @@ import { JobCategoriesComponent } from './job-categories/job-categories.componen
 import { JobSearchComponent } from './job-search/job-search.component';
 import 'hammerjs';
 import { NgxHmCarouselModule } from 'ngx-hm-carousel';
+import { NoteBooksComponent } from './note-books/note-books.component';
 export function getAuthServiceConfigs() {
   let config = new AuthServiceConfig(
     [
@@ -66,7 +67,8 @@ export function getAuthServiceConfigs() {
     JobDetailComponent,
     LayoutComponent,
     JobCategoriesComponent,
-    JobSearchComponent
+    JobSearchComponent,
+    NoteBooksComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'online-quizzes' }),
