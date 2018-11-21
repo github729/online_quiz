@@ -71,13 +71,13 @@
                 </ng-template>
 
                 <li class="nav-item" *ngIf="!currentUser;else otherBlock">
-                    <a class="nav-link" data-toggle="modal" data-target="#modalLRForm">
+                    <a class="nav-link" data-toggle="modal" data-target="#loginModal">
                         LogIn
                     </a>
                 </li>
 
                 <li class="nav-item" *ngIf="!currentUser">
-                    <a class="nav-link" data-toggle="modal" data-target="#modalLRForm">
+                    <a class="nav-link" data-toggle="modal" data-target="#regModal">
                         Register
                     </a>
                 </li>

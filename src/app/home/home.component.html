@@ -1,22 +1,14 @@
 <!-- Full Page Intro -->
 
-<ngx-hm-carousel
-  [(ngModel)]="index" 
-  [autoplay-speed]="3000"
-  [autoplay]="true"
-  [infinite]="infinite"
-  [between-delay]="2000"
+<ngx-hm-carousel [(ngModel)]="index" [autoplay-speed]="3000" [autoplay]="true" [infinite]="infinite" [between-delay]="2000"
   class="carousel c-accent">
 
   <section ngx-hm-carousel-container class="content">
-    <article class="item cursor-pointer"
-      ngx-hm-carousel-item
-      *ngFor="let avatar of avatars">
-      <div class="img"
-        [style.backgroundImage]="'url('+avatar.url+')'">
+    <article class="item cursor-pointer" ngx-hm-carousel-item *ngFor="let avatar of avatars">
+      <div class="img" [style.backgroundImage]="'url('+avatar.url+')'">
         <div class="caption">
-            <span>{{ avatar.data}}</span>          
-            <a class="btn" href="#">{{ avatar.button }}</a>          
+          <span>{{ avatar.data}}</span>
+          <a class="btn" href="#">{{ avatar.button }}</a>
         </div>
       </div>
     </article>
@@ -24,7 +16,7 @@
 
   <ng-template #carouselPrev>
     <div class="click-area">
-      <i class="fa fa-angle-left"></i>      
+      <i class="fa fa-angle-left"></i>
     </div>
   </ng-template>
 
@@ -35,8 +27,7 @@
   </ng-template>
 
   <ng-template #carouselDot let-model>
-    <div class="ball bg-accent"
-      [class.visible]="model.index === model.currentIndex"></div>
+    <div class="ball bg-accent" [class.visible]="model.index === model.currentIndex"></div>
   </ng-template>
 
 
@@ -352,48 +343,21 @@
   <!--Section: More-->
 
 </div>
-
-<!--Modal: Login / Register Form-->
-<div class="modal fade" id="modalLRForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog cascading-modal" role="document">
-    <!--Content-->
-    <div class="modal-content">
-
-      <!--Modal cascading tabs-->
-      <div class="modal-c-tabs">
-
-        <!-- Nav tabs -->
-        <ul class="nav nav-tabs md-tabs tabs-2 light-blue darken-3" role="tablist">
-          <li class="nav-item">
-            <a class="nav-link active" data-toggle="tab" href="#panel7" role="tab">
-              <i class="fa fa-user mr-1"></i> Login</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="tab" href="#panel8" role="tab">
-              <i class="fa fa-user-plus mr-1"></i> Register 
-              <i class="fa fa-times-circle pull-right" data-dismiss="modal"></i>            
-            </a>           
-          </li>
-        </ul>
-
-        <!-- Tab panels -->
-        <div class="tab-content">
-          <!--Panel 7-->
-          <div class="tab-pane fade in show active" id="panel7" role="tabpanel">
-            <app-login></app-login>
-          </div>
-          <!--/.Panel 7-->
-
-          <!--Panel 8-->
-          <div class="tab-pane fade" id="panel8" role="tabpanel">
-            <app-register></app-register>
-          </div>
-          <!--/.Panel 8-->
-        </div>
-
+<div class="modal fade" id="loginModal" role="dialog">
+  <div class="modal-dialog modal-md">
+    <div class="modal-content"> 
+      <div class="modal-body">
+        <app-login></app-login>
       </div>
     </div>
-    <!--/.Content-->
   </div>
 </div>
-<!--Modal: Login / Register Form-->
+<div class="modal fade" id="regModal" role="dialog">
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+      <div class="modal-body">
+        <app-register></app-register>
+      </div>
+    </div>
+  </div>
+</div>

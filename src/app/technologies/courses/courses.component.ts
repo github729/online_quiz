@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { SinglteonService } from '../../services/singlteon.service';
 import { QuizService } from '../../services/quiz.service';
 import { NgxSpinnerService } from 'ngx-spinner';
+import { HeaderComponent } from '../../header/header.component';
 @Component({
   selector: 'app-courses',
   templateUrl: './courses.component.html',
@@ -15,9 +16,12 @@ export class CoursesComponent implements OnInit {
   constructor(private _quizApi : QuizService,
     private _router : Router,
     private _singleteonApi : SinglteonService,
-    private _spinner: NgxSpinnerService) { }
+    private _spinner: NgxSpinnerService) { 
+      
+    }
 
   ngOnInit() {
+    HeaderComponent.updateUserStatus.next(true); // here!
     this._spinner.show();
     this._quizApi.getCourses$().subscribe(data => {
       if (data['success']) {
